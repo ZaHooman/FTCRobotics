@@ -1,5 +1,9 @@
-git add .gitattributes
+# Create the .gitattributes file
 touch .gitattributes
+
+# Open the file in a text editor to add content
+# (use nano, vim, or your preferred editor)
+nano .gitattributes
 
 # Explicitly mark Java files as detectable
 *.java linguist-detectable=true
@@ -17,6 +21,11 @@ touch .gitattributes
 *.png linguist-vendored
 *.jpg linguist-vendored
 
+# Add the .gitattributes file to the Git staging area
 git add .gitattributes
+
+# Commit the file with a meaningful message
 git commit -m "Add .gitattributes for Java language detection"
+
+# Push the commit to the remote repository
 git push origin main
