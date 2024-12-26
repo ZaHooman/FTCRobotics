@@ -1,0 +1,21 @@
+touch .gitattributes
+
+# Explicitly mark Java files as detectable
+*.java linguist-detectable=true
+
+# Mark non-code files (e.g., docs, generated files) to reduce their influence on language stats
+*.md linguist-documentation
+*.txt linguist-documentation
+*.log linguist-generated
+
+# Ignore binary files
+*.class linguist-vendored
+*.jar linguist-vendored
+*.war linguist-vendored
+*.zip linguist-vendored
+*.png linguist-vendored
+*.jpg linguist-vendored
+
+git add .gitattributes
+git commit -m "Add .gitattributes for Java language detection"
+git push origin main
