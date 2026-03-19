@@ -12,6 +12,8 @@
 - **2024-2025**: Into The Deep
 - **2025-2026**: Decode
 
+---
+
 **FTC ALUMNI**
 
 
