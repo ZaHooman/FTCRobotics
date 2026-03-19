@@ -1,0 +1,40 @@
+package org.firstinspires.ftc.teamcode.Sensors;
+
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.NormalizedColorSensor;
+import com.qualcomm.robotcore.hardware.NormalizedRGBA;
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
+public class ColorTestingBench {
+    NormalizedColorSensor colorSensor;
+    float baseRed, baseGreen, baseBlue;
+
+    public enum detectedColor {
+        RED, BLUE, YELLOW, UNKNOWN
+    }
+
+    public void init(HardwareMap hwMap) {
+        colorSensor = hwMap.get(NormalizedColorSensor.class, "color_sensor;_distance");
+
+        NormalizedRGBA base = colorSensor.getNormalizedColors();
+        baseRed   = base.red / base.alpha;
+        baseGreen = base.green / base.alpha;
+        baseBlue  = base.blue / base.alpha;
+    }
+
+    public boolean isSomethingDetected(Telemetry telemetry) {
+        NormalizedRGBA colors = colorSensor.getNormalizedColors();
+
+        float normRed   = colors.red / colors.alpha;
+        float normGreen = colors.green / colors.alpha;
+        float normBlue  = colors.blue / colors.alpha;
+
+        telemetry.addData("RED",   "%.3f", normRed);
+        telemetry.addData("GREEN", "%.3f", normGreen);
+        telemetry.addData("BLUE",  "%.3f", normBlue);
+
+        float threshold = 0.1f;
+
+        return Math.abs(normRed - baseRed) > threshold || Math.abs(normGreen - baseGreen) > threshold || Math.abs(normBlue - baseBlue)  > threshold;
+    }
+}
