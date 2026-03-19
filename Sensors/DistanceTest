@@ -1,3 +1,6 @@
+##HAS BOTH GAMEPAD RUMBLE AND TURN ON FLYWHEEL
+#RUMBLE ONLY WORKS ON PS and XBOX
+
 package org.firstinspires.ftc.teamcode.Sensors;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
