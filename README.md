@@ -1,4 +1,4 @@
-# FTCRobotics
+# First Tech Challenge (Robotics)
 **Sister Teams:** 5440 &amp; 3795 (Blazin' Circuits &amp; Jag-Wired)
 
 **Years:** 2023-2026
